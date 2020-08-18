@@ -1,0 +1,26 @@
+<div class="cardShowEvent" > 
+  <div class="card border-secondary mb-3 text-center">
+    <div class="card-header border-secondary Show"><%= @event.title %></div>
+      <div class="card-body Show">
+        <% if @event.event_picture.attached? %>
+          <%= image_tag @event.event_picture, alt: 'event picture', class: "event_picture" %>
+        <% end %>
+        <h4 class="card-title"><%= @event.title%></h4>
+        <p class="card-text">Le prix de cet événement sera de <%= @event.price %> euro et il se déroulera à <strong><%= @event.location %></strong></p>
+        <p class="card-text">Le total de personnes participant à cet event est de <%= @participants.count %> personnes </p>
+        <p class="card-text">Voici l'email de l'administrateur de l'event : <%= @admin.email %></p>
+        <p>Cet event débutera le <span class="text-info"><%= @event.start_date.strftime("%d %B %Y, %H:%M")  %></span> et se finira le <span class="text-info"><%= end_date(@event).strftime("%d %B %Y, %H:%M") %></span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="text-center" style="margin: 10px 0">
+  <%= link_to "Revenir à l'accueil", root_path, class: 'btn btn-outline-warning btn-sm', style: 'margin-right: 10px' %>
+  <% unless is_owner?(@event.admin_id) || already_present?(@event) %>
+    <%= link_to "Participer à cet event", new_event_charge_path(event_id: @event.id), class: 'btn btn-outline-danger btn-sm' %>
+  <% end %>
+  <% if is_owner?(@event.admin_id) %>
+    <%= link_to "Mon espace event", event_attendances_path(@event), class: 'btn btn-outline-danger btn-sm', style: 'margin-right: 10px' %>
+  <% end %>
+</div>
