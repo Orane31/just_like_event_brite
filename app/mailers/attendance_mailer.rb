@@ -1,5 +1,5 @@
 class AttendanceMailer < ApplicationMailer
-  default from: 'julienlamalle63100@gmail.com'
+  default from: 'orane.chaperalriquet@gmail.com'
 
   def new_attendance(attendance)
 

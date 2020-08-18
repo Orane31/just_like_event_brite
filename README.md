@@ -1,6 +1,6 @@
  # README
 
-Project realized by Julien Lamalle for THP.
+Project realized by Orane Chaper for THP.
 
 This web application is an application that showcases events created by users that we generated in our database initially.
 
@@ -28,4 +28,4 @@ rails s
 
 However you can go directly to :
 
-https://event-thp.herokuapp.com/
+https://just-like-event-brite.herokuapp.com/
