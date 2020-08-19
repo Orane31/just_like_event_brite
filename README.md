@@ -1,6 +1,6 @@
  # README
 
-Project realized by Orane Chaper for THP.
+This is a production test with code from julien Lamalle.
 
 This web application is an application that showcases events created by users that we generated in our database initially.
 
